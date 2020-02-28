@@ -1,0 +1,34 @@
+﻿<Window x:Class="Test_maker.TestRebuild"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_maker"
+        mc:Ignorable="d"
+        Title="TestRebuild" Height="450" Width="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Label x:Name="lbldes"></Label>
+            <ScrollViewer>
+                <ListBox x:Name="lbquest" Height="50"  SelectionChanged="Tests_SelectionChanged"  ></ListBox>
+            </ScrollViewer>
+        </StackPanel>
+  
+        <Button DockPanel.Dock="Bottom" Click="Button_Click" Content="End the Correction"/>
+        <StackPanel DockPanel.Dock="Right">
+            <Label>Question</Label>
+            <TextBox x:Name="txtquest"></TextBox>
+            <Label>Answer1</Label>
+            <TextBox x:Name="txtans1"></TextBox>
+            <Label>answer2</Label>
+            <TextBox x:Name="txtans2"></TextBox>
+            <Label>answer3</Label>
+            <TextBox x:Name="txtans3"></TextBox>
+            <Label>answer4</Label>
+            <TextBox x:Name="txtans4"></TextBox>
+            <Button x:Name="btnSubmit" Content="Submit" Click="BtnSubmit_Click"/>
+        </StackPanel>
+   
+    </DockPanel>
+
+</Window>

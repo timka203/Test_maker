@@ -1,0 +1,27 @@
+﻿<Window x:Class="Test_maker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_maker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        
+        <DockPanel>
+            <ListBox x:Name="tests" SelectionChanged="Tests_SelectionChanged" DockPanel.Dock="Top">
+                
+            </ListBox>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" x:Name="spuser">
+                <Button x:Name="AddUser" Click="AddUser_Click" Content="Add User"></Button>
+                <Button x:Name="Reguser" Click="Reguser_Click" Content="RegUser"></Button>
+                
+            </StackPanel>
+            <Button  x:Name="btncrttest" Click="Btncrttest_Click">Create test
+            </Button>
+        </DockPanel>
+
+    </Grid>
+
+</Window>
