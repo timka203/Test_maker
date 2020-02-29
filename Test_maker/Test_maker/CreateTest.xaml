@@ -53,12 +53,12 @@
                 <TextBox x:Name="txprc"/>
                 </StackPanel>
             </StackPanel>
-          
-            <Button x:Name="btn_add_quest" Click="Btn_add_quest_Click">Add question</Button>
+
+            <Button x:Name="btn_add_quest" Click="Btn_add_quest_Click" Content="Add question"></Button>
         </StackPanel>
-     
-        <Button  Grid.Row="2" x:Name="btnCrtTest" Click="BtnCrtTest_Click">
-            Create test
+
+        <Button  Grid.Row="2" x:Name="btnCrtTest" Click="BtnCrtTest_Click" Content="  Create test">
+
         </Button>
 
     </Grid>

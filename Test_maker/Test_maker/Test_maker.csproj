@@ -70,9 +70,6 @@
       <DependentUpon>RegWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Test.cs" />
-    <Compile Include="TestRebuild.xaml.cs">
-      <DependentUpon>TestRebuild.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
@@ -100,10 +97,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestRebuild.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

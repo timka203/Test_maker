@@ -41,7 +41,7 @@ namespace Test_maker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TestRebuild test = new TestRebuild(test_local, user);
+            CreateTest test = new CreateTest(user,test_local);
             test.Show();
             this.Close();
 

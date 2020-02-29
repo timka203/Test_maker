@@ -29,6 +29,12 @@ namespace Test_maker
         public CreateTest(User User,Test test = null)
         {
             InitializeComponent();
+            if (test!= null)
+            {
+                btn_add_quest.Content="Remake Question";
+                btnCrtTest.Content = "Remake Test";
+            }
+          
             user = User;
             if(test!=null)
             {
@@ -109,7 +115,11 @@ namespace Test_maker
                 Question.answer4 = txtans4.Text;
                 Question.Id = question.Id;
                 Question.price = txprc.Text;
-                Question.right_answer = cbrghtans.SelectedItem.ToString();
+                if (cbrghtans.SelectedItem!=null)
+                {
+                    Question.right_answer = cbrghtans.SelectedItem.ToString();
+                }
+            
 
                 test.questions[question.Id-1] = Question;
 
