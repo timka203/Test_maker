@@ -130,6 +130,30 @@ namespace PublicLibrary.lip
                 return true;
             }
 
+
+        }
+        public bool DeleteUser(User user)
+        {
+            {
+
+                using (var db = new LiteDatabase(Path))
+                {
+                    if (db.CollectionExists("User"))
+                    {
+                        var users = db.GetCollection<User>("User");
+                        users.Delete(user.Id);
+                  
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+
+                return true;
+            }
+
         }
         public bool DeleteQuestion(Test test,int id)
         {

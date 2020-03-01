@@ -34,6 +34,7 @@
                 Width="200" Height="30" FontSize="18"  Margin="10 5 10 0"
                 Content="Войти" FontFamily="Bahnschrift Light Condensed"
                 IsDefault="True"/>
+            <Button  Margin="10 5 10 0"  x:Name="Back" Click="Back_Click"  Width="200" Content="Back"  Height="30"/>
         </StackPanel>
     </Grid>
 </Window>

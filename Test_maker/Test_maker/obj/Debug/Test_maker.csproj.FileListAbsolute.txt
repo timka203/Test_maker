@@ -52,3 +52,5 @@ D:\проги\Test_maker\Test_maker\Test_maker\obj\Debug\Test_maker.Properties.R
 D:\проги\Test_maker\Test_maker\Test_maker\obj\Debug\Test_maker.csproj.GenerateResource.cache
 D:\проги\Test_maker\Test_maker\Test_maker\obj\Debug\Test_maker.csproj.CoreCompileInputs.cache
 D:\проги\Test_maker\Test_maker\Test_maker\obj\Debug\Test_maker.csproj.CopyComplete
+D:\проги\Test_maker\Test_maker\Test_maker\obj\Debug\Settings.g.cs
+D:\проги\Test_maker\Test_maker\Test_maker\obj\Debug\Settings.baml

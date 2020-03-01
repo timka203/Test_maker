@@ -11,6 +11,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto">  </RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Vertical">
             <Label>Description</Label>
@@ -60,6 +61,7 @@
         <Button  Grid.Row="2" x:Name="btnCrtTest" Click="BtnCrtTest_Click" Content="  Create test">
 
         </Button>
+        <Button Grid.Row="3"  x:Name="Back" Click="Back_Click"  Content="Back"/>
 
     </Grid>
 </Window>

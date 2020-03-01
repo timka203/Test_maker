@@ -149,5 +149,11 @@ namespace Test_maker
             
 
         }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(user);
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

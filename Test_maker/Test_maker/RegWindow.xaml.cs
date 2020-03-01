@@ -20,19 +20,37 @@ namespace Test_maker
     /// </summary>
     public partial class RegWindow : Window
     {
+        User user = new User();
         private DbContext db = new DbContext(MainWindow.path);
-        public RegWindow()
+        public RegWindow( User user=null)
         {
             InitializeComponent();
+            {
+                if (user.Id!=0)
+                {
+                    this.user = user;
+                    Login.Text = user.Login;
+                    tbxUserName.Text = user.UserName;
+                    lblpass.Visibility = Visibility.Hidden;
+                    pbPassword.Visibility = Visibility.Hidden;
+                    BtnRegistrate.Content = "Обновить";
+                }
+            }
         }
 
         private void BtnRegistrate_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
+ 
             user.Login = Login.Text;
-            user.Password = pbPassword.Password;
+            if (user.Id == 0)
+            {
+                user.Password = pbPassword.Password;
+            }
             user.UserName = tbxUserName.Text;
-  
+            if (user.Id!=0)
+            {
+                db.DeleteUser(user);
+            }
 
             if (db.RegUser(user))
             {
@@ -45,6 +63,12 @@ namespace Test_maker
             {
                 MessageBox.Show("Упс!!!");
             }
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(user);
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

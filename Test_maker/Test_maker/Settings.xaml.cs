@@ -16,39 +16,36 @@ using System.Windows.Shapes;
 namespace Test_maker
 {
     /// <summary>
-    /// Логика взаимодействия для RegUser.xaml
+    /// Логика взаимодействия для Settings.xaml
     /// </summary>
-    public partial class RegUser : Window
+    public partial class Settings : Window
     {
         User user = new User();
-        private DbContext db = new DbContext(MainWindow.path);
-        public RegUser()
-        {
-            InitializeComponent();
-            stUsers.DataContext = MainWindow.user;
+        public Settings(User user)
 
+        {
         
+            InitializeComponent();
+                this.user = user;
+            string str = MainWindow.path;
+            tbdb.Text = str;
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckInput(InputLogin, validateInputLogin))
+            if (CheckInput(tbdb,lbl))
             {
-                MainWindow.user.Password = InputPassword.Password;
-                user = db.GetUser(MainWindow.user);
-
-                if (user != null)
-                {
-                    MainWindow mw = new MainWindow(user);
-                    mw.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Ошибка авторизации");
-                }
+                MainWindow.path = tbdb.Text;
             }
+         
         }
 
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow(user);
+            mainWindow.Show();
+            this.Close();
+        }
         private bool CheckInput(TextBox input, Label validLable)
         {
             if (string.IsNullOrWhiteSpace(input.Text))
@@ -63,12 +60,5 @@ namespace Test_maker
                 return true;
             }
         }
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow(user);
-            mainWindow.Show();
-            this.Close();
-        }
     }
-    
 }

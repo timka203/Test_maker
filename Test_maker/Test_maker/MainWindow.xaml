@@ -10,15 +10,35 @@
     <Grid>
         
         <DockPanel>
-            <ListBox x:Name="tests" SelectionChanged="Tests_SelectionChanged" DockPanel.Dock="Top">
-                
-            </ListBox>
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" x:Name="spuser">
+
+            <StackPanel DockPanel.Dock="Top">
+                <Expander    Header="Menu"  >
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" x:Name="spuser">
                 <Button x:Name="AddUser" Click="AddUser_Click" Content="Add User"></Button>
                 <Button x:Name="Reguser" Click="Reguser_Click" Content="RegUser"></Button>
-                
+                    <Button  x:Name="btncrtest" Click="Btncrttest_Click">Create test
+                    </Button>
+
+                </StackPanel>
+                </Expander>
+                <Expander Header="For Admin" x:Name="exadmin" Visibility="Hidden">
+                    <StackPanel>
+                        <Button x:Name="GetUser" Click="GetUser_Click" Content="Edit User"></Button>
+                    <Button x:Name="Settings" Click="Settings_Click" Content="Settings"></Button>
+                    </StackPanel>
+                </Expander>
             </StackPanel>
-            <Button  x:Name="btncrttest" Click="Btncrttest_Click">Create test
+
+
+            
+                
+                
+
+            <Label DockPanel.Dock="Top" Content="Test List" />
+            <ListBox x:Name="tests" SelectionChanged="Tests_SelectionChanged" DockPanel.Dock="Top">
+
+            </ListBox>
+            <Button  x:Name="btncrttest" Click="Btncrttest_Click" Visibility="Hidden">Create test
             </Button>
         </DockPanel>
 

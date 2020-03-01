@@ -23,7 +23,7 @@ namespace Test_maker
     public partial class MainWindow : Window
     {
         public static User user = new User();
-        
+        Button but = new Button();
 
 
         public MainWindow()
@@ -35,7 +35,7 @@ namespace Test_maker
 
                 tests.Items.Add(item.Descriprtion);
             }
-          
+           
            
           
         }
@@ -51,7 +51,13 @@ namespace Test_maker
             if (user.Id != 0)
             {
                 spuser.Children.Clear();
+                btncrttest.Visibility = Visibility.Visible;
+                exadmin.Visibility = Visibility.Visible;
+
+
+
             }
+          
 
 
 
@@ -72,7 +78,7 @@ namespace Test_maker
 
             Test test = new Test();
             test = db.GetTest(tests.SelectedValue.ToString());
-           CreateTest testview = new CreateTest(user,test); 
+        TestView testview = new TestView(test,user); 
             testview.Show();
             this.Close();
           
@@ -90,6 +96,21 @@ namespace Test_maker
         {
             RegUser rg = new RegUser();
             rg.Show();
+            this.Close();
+        }
+
+        private void GetUser_Click(object sender, RoutedEventArgs e)
+        {
+            RegWindow regWindow = new RegWindow(user);
+            regWindow.Show();
+            this.Close();
+
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings button = new Settings(user);
+            button.Show();
             this.Close();
         }
     }
