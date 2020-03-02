@@ -25,8 +25,8 @@ namespace Test_maker
         public RegWindow( User user=null)
         {
             InitializeComponent();
-            {
-                if (user.Id!=0)
+            
+                if (user!=null)
                 {
                     this.user = user;
                     Login.Text = user.Login;
@@ -35,7 +35,7 @@ namespace Test_maker
                     pbPassword.Visibility = Visibility.Hidden;
                     BtnRegistrate.Content = "Обновить";
                 }
-            }
+            
         }
 
         private void BtnRegistrate_Click(object sender, RoutedEventArgs e)

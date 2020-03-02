@@ -60,14 +60,27 @@ namespace Test_maker
 
 
             txtquest.Text = question.quest_text;
-            txtans1.Text = question.answer1;
-            txtans2.Text = question.answer2;
-            txtans3.Text = question.answer3;
-            txtans4.Text = question.answer4;
-            if(user.Id!=0)
+            txtans1.Text = question.ans_text1;
+            txtans2.Text = question.ans_text2;
+            txtans3.Text = question.ans_text3;
+            txtans4.Text = question.ans_text4;
+            isright1.Visibility= Visibility.Hidden;
+            isright2.Visibility = Visibility.Hidden;
+            isright3.Visibility = Visibility.Hidden;
+            isright4.Visibility = Visibility.Hidden;
+
+            if (user.Id!=0)
             {
                 txprc.Text= question.price;
-               
+                isright1.Visibility = Visibility.Visible;
+                isright2.Visibility = Visibility.Visible;
+                isright3.Visibility = Visibility.Visible;
+                isright4.Visibility = Visibility.Visible;
+                isright1.IsChecked = question.IsRight1;
+                isright2.IsChecked = question.IsRight2;
+                isright3.IsChecked = question.IsRight3;
+                isright4.IsChecked = question.IsRight4;
+
             }
 
         }
@@ -109,17 +122,18 @@ namespace Test_maker
             {
     
                 Question.quest_text = txtquest.Text;
-                Question.answer1 = txtans1.Text;
-                Question.answer2 = txtans2.Text;
-                Question.answer3 = txtans3.Text;
-                Question.answer4 = txtans4.Text;
+                Question.ans_text1 = txtans1.Text;
+                Question.ans_text2 = txtans2.Text;
+                Question.ans_text3 = txtans3.Text;
+                Question.ans_text4 = txtans4.Text;
                 Question.Id = question.Id;
                 Question.price = txprc.Text;
-                if (cbrghtans.SelectedItem!=null)
-                {
-                    Question.right_answer = cbrghtans.SelectedItem.ToString();
-                }
-            
+                Question.IsRight1 = (bool)isright1.IsChecked;
+                Question.IsRight2 = (bool)isright2.IsChecked;
+                Question.IsRight3 = (bool)isright3.IsChecked;
+                Question.IsRight4 = (bool)isright4.IsChecked;
+
+
 
                 test.questions[question.Id-1] = Question;
 
@@ -129,12 +143,16 @@ namespace Test_maker
             {
 
                 Question.quest_text = txtquest.Text;
-                Question.answer1 = txtans1.Text;
-                Question.answer2 = txtans2.Text;
-                Question.answer3 = txtans3.Text;
-                Question.answer4 = txtans4.Text;
+                Question.ans_text1 = txtans1.Text;
+                Question.ans_text2 = txtans2.Text;
+                Question.ans_text3 = txtans3.Text;
+                Question.ans_text4 = txtans4.Text;
                 Question.price = txprc.Text;
-                Question.right_answer = cbrghtans.SelectedItem.ToString();
+                Question.IsRight1 = (bool)isright1.IsChecked;
+                Question.IsRight2 = (bool)isright2.IsChecked;
+                Question.IsRight3 = (bool)isright3.IsChecked;
+                Question.IsRight4 = (bool)isright4.IsChecked;
+
 
                 test.questions.Add(Question);
                 lbtquest.Items.Add(Question.quest_text);
@@ -146,6 +164,7 @@ namespace Test_maker
             txtans4.Clear();
             txtquest.Clear();
             txprc.Clear();
+            
             
 
         }

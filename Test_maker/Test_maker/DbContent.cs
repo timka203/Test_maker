@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test_maker;
 
 namespace PublicLibrary.lip
 {
@@ -77,6 +78,19 @@ namespace PublicLibrary.lip
             using (var db = new LiteDatabase(Path))
             {
                 tests = db.GetCollection<Test>("Test").FindAll().ToList();
+                foreach (var test in tests)
+                {
+                    List<Question> question = new List<Question>();
+                    question = db.GetCollection<Question>("Question" + test.id.ToString()).FindAll().ToList();
+                    //foreach (var item in question)
+                    //{
+                    //    int tmp = item.Id - 1;
+                    //    item.answers = db.GetCollection<Answer>("Answer" + test.id.ToString() + "_" + tmp.ToString()).FindAll().ToList();
+
+                    //}
+                    test.questions = question;
+                }
+              
             }
 
             return tests;
@@ -91,7 +105,13 @@ namespace PublicLibrary.lip
                          .FindOne(f => f.Descriprtion == des);
                 List<Question> question = new List<Question>();
                 question = db.GetCollection<Question>("Question" + test.id.ToString()).FindAll().ToList();
+                //foreach (var item in question)
+                //{
+                //    int tmp = item.Id - 1;
+                //    item.answers = db.GetCollection<Answer>("Answer" + test.id.ToString() + "_" + tmp.ToString()).FindAll().ToList();
+                //}
                 test.questions = question;
+
             }
 
             return test;
@@ -187,14 +207,35 @@ namespace PublicLibrary.lip
                     var users = db.GetCollection<Test>("Test");
                     users.Insert(test);
                     var quests = db.GetCollection<Question>("Question" + test.id.ToString());
-                    foreach (var item in test.questions)
-                    {
-                        quests.Insert(item);
-                        
-                    }
-                   
-                    
+                
+                foreach (var item in test.questions)
+                {
+                    //var answers = db.GetCollection<Answer>("Answer" + test.id.ToString() + "_" + item.Id.ToString());
+                    //foreach (var item_a in item.answers)
+                    //{
+                    //    answers.Insert(item_a);
+                    //}
+
+                    quests.Insert(item);
                 }
+                //foreach (var item in db.GetCollection<Question>("Question" + test.id.ToString()).FindAll().ToList())
+                //{
+                //    var answers = db.GetCollection<Answer>("Answer" + test.id.ToString() + "_" + item.Id.ToString());
+                //    foreach (var item_a in item.answers)
+                //    {
+                //        answers.Insert(item_a);
+                //    }
+
+                //}
+              
+
+
+
+
+
+
+
+            }
 
                 return true;
             }

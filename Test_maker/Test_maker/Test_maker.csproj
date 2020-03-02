@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Answer.cs" />
     <Compile Include="CreateTest.xaml.cs">
       <DependentUpon>CreateTest.xaml</DependentUpon>
     </Compile>

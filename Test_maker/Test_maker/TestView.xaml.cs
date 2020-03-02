@@ -30,11 +30,11 @@ namespace Test_maker
             lbldes.Content = test.Descriprtion;
             foreach (var item in test.questions)
             {
-                lbquest.Items.Add(new Label() { FontSize=26, Content = item.quest_text });
-                lbquest.Items.Add(new Label() { FontSize=20, Content = item.answer1  });
-                lbquest.Items.Add(new Label() { FontSize = 20, Content = item.answer2 });
-                lbquest.Items.Add(new Label() { FontSize = 20, Content = item.answer3 });
-                lbquest.Items.Add(new Label() { FontSize = 20, Content = item.answer4});
+                lbquest.Items.Add(new Label() { FontSize=26,  Content = item.quest_text });
+                lbquest.Items.Add(new Label() { FontSize=20,  Content =  item.ans_text1 });
+                lbquest.Items.Add(new Label() { FontSize = 20, Content = item.ans_text2 });
+                lbquest.Items.Add(new Label() { FontSize = 20, Content = item.ans_text3 });
+                lbquest.Items.Add(new Label() { FontSize = 20, Content = item.ans_text4});
                 lbquest.Items.Add(new Label() { FontSize = 20, Content = "---------------------------------" });
             }
         }

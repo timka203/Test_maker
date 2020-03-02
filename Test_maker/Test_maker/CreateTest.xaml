@@ -33,20 +33,22 @@
                     <TextBox x:Name="txtquest"></TextBox>
                     <Label>Answer1</Label>
                     <TextBox x:Name="txtans1"></TextBox>
+                <Label>IsRight?</Label>
+                <CheckBox x:Name="isright1" IsChecked="False"></CheckBox>
                     <Label>answer2</Label>
                     <TextBox x:Name="txtans2"></TextBox>
-                    <Label>answer3</Label>
+                <Label>IsRight?</Label>
+                <CheckBox x:Name="isright2"  IsChecked="False"></CheckBox>
+                <Label>answer3</Label>
                     <TextBox x:Name="txtans3"></TextBox>
-                    <Label>answer4</Label>
+                <Label>IsRight?</Label>
+                <CheckBox x:Name="isright3"  IsChecked="False"></CheckBox>
+                <Label>answer4</Label>
                     <TextBox x:Name="txtans4"></TextBox>
+                <Label>IsRight?</Label>
+                <CheckBox x:Name="isright4"  IsChecked="False"></CheckBox>
                 <StackPanel Orientation="Horizontal" IsEnabled="False " x:Name="spcb">
-                    <Label Content="Right Answer"/>
-                    <ComboBox Text="Right Answer" x:Name="cbrghtans">
-                        <ComboBoxItem>1</ComboBoxItem>
-                        <ComboBoxItem>2</ComboBoxItem>
-                        <ComboBoxItem>3</ComboBoxItem>
-                        <ComboBoxItem>4</ComboBoxItem>
-                    </ComboBox>
+               
                    
                 </StackPanel>
                 <StackPanel IsEnabled="False" x:Name="sptb">
